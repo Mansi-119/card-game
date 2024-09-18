@@ -27,7 +27,7 @@ public class CardTrick {
             magicHand[i] = c; 
         }
         
-        // Ask the user for a card
+    
         Scanner scanner = new Scanner(System.in);
         System.out.println("Pick a card value (1-13): ");
         int userValue = scanner.nextInt();
@@ -35,23 +35,14 @@ public class CardTrick {
         int userSuitIndex = scanner.nextInt();
         String userSuit = Card.SUITS[userSuitIndex];
         
-        // Search the magic hand for the user's card
+       
         boolean found = false;
         for (Card card : magicHand) {
             if (card.getValue() == userValue && card.getSuit().equals(userSuit)) {
                 found = true;
                 break;
-            }
-        }
-        
-        // Report the result
-        if (found) {
-            System.out.println("Your card is in the magic hand!");
-        } else {
-            System.out.println("Your card is not in the magic hand.");
-        }
-    }
-    Card luckyCard = new Card();
+
+                 Card luckyCard = new Card();
 luckyCard.setValue(2);
 luckyCard.setSuit("Clubs");
 
@@ -63,10 +54,9 @@ for (Card card : magicHand) {
     }
 }
 
-// Report the result
 if (found) {
     System.out.println("You win! The lucky card is in the magic hand.");
 } else {
     System.out.println("You lose. The lucky card is not in the magic hand.");
 }
-}
+ }
